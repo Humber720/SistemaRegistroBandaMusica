@@ -1,0 +1,152 @@
+/* ----------------- FONDO GENERAL ----------------- */
+body {
+    background: linear-gradient(135deg, #6cb8ff, #a47cff);
+    font-family: "Poppins", sans-serif;
+    padding: 20px;
+    margin: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ----------------- TARJETA PRINCIPAL ----------------- */
+.form-card {
+    background: #ffffffcc;
+    backdrop-filter: blur(6px);
+    width: 100%;
+    max-width: 420px;
+    margin: 15px;
+    padding: 25px 25px 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+    animation: entrada 0.8s ease;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.form-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* ----------------- ANIMACIÓN ENTRADA ----------------- */
+@keyframes entrada {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ----------------- TITULOS ----------------- */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.titulo-form {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: linear-gradient(135deg, #4a90e2, #6fb1fc);
+    border-radius: 12px;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    animation: fadeIn 0.8s ease-out;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.titulo-form:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+.titulo-principal { font-size: 20px; font-weight: bold; margin-bottom: 5px; }
+.subtitulo { font-size: 16px; margin: 2px 0; opacity: 0.9; }
+.docente { font-size: 15px; margin: 2px 0; font-style: italic; opacity: 0.9; }
+
+/* ----------------- LABELS ----------------- */
+label {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* ----------------- INPUTS Y SELECTS ----------------- */
+input, select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    border: 2px solid #5552;
+    font-size: 16px;
+    background: #ffffffdd;
+    transition: 0.3s, transform 0.2s;
+}
+
+input:focus, select:focus {
+    border-color: #6c7bff;
+    background: #eef1ff;
+    outline: none;
+    transform: scale(1.02);
+}
+
+/* ----------------- BOTONES ----------------- */
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s, transform 0.2s;
+}
+
+button:hover { transform: scale(1.03); }
+
+/* BOTON PRINCIPAL */
+.btn-enviar { background: #ff7f50; }
+.btn-enviar:hover { background: #ff5722; }
+
+/* BOTON DESCARGAR */
+.btn-descargar { background: #4caf50; }
+.btn-descargar:hover { background: #2e7d32; }
+
+/* BOTON SALIR */
+.btn-salir { background: #607d8b; margin-top: 8px; }
+.btn-salir:hover { background: #455a64; }
+
+/* ----------------- SECCIONES OCULTAS ----------------- */
+.hidden { display: none; }
+
+/* ----------------- NOTA WHATSAPP ----------------- */
+.nota {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+.nota a { color: #2a32ff; font-weight: bold; }
+
+/* ----------------- ANIMACIÓN TITULO ----------------- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ----------------- RESPONSIVE ----------------- */
+@media (max-width: 480px) {
+    .form-card { padding: 20px 15px 25px; }
+    .titulo-principal { font-size: 18px; }
+    .subtitulo { font-size: 14px; }
+    .docente { font-size: 13px; }
+    input, select, button { font-size: 14px; padding: 10px; }
+    .nota { font-size: 12px; }
+}
+
+@media (min-width: 1024px) {
+    .form-card { max-width: 500px; }
+}

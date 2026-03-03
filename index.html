@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulario Estudiantil</title>
+
+<link rel="stylesheet" href="estilo.css">
+
+<!-- Librería PDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+<body>
+
+<div class="form-card" id="formulario">
+    <div class="titulo-form">
+        <h2 class="titulo-principal">📘 REGISTRO DE INSCRIPCIÓN</h2>
+        <p class="subtitulo">Banda de Música U.E.T.H.P. "Jupapina"</p>
+        <p class="docente">Profesor: Humberto Yupanqui C.</p>
+    </div>    
+
+    <p class="instrucciones">
+        Estimado(a) Señor padre, madre o tutor del estudiante:  
+        Usted está autorizando para que forme parte de la Banda de Música de la Unidad Educativa.
+        En ese sentido, registre correctamente el formulario y luego apersonarse para su firma correspondiente.
+    </p>
+
+    <label for="nombre_estudiante">Nombre y Apellido del Estudiante:</label>
+    <input type="text" id="nombre_estudiante" placeholder="Escribe tu nombre completo" required>
+
+    <label for="curso">Curso:</label>
+    <select id="curso" required>
+        <option value="">Seleccione el nivel y curso</option>
+        <option>5to de Primaria</option>
+        <option>6to de Primaria</option>
+        <option>1ro Secundaria</option>
+        <option>2do Secundaria</option>
+        <option>3ro Secundaria</option>
+        <option>4to Secundaria</option>
+        <option>5to Secundaria</option>
+        <option>6to Secundaria</option>
+    </select>
+
+    <label for="instrumento">¿Qué instrumento musical interpretará en la Banda de Música?</label>
+    <select id="instrumento" required>
+        <option value="">Seleccione una opción</option>
+        <option>Trompeta</option>
+        <option>Barítono</option>
+        <option>Trombón</option>
+        <option>Lira</option>
+        <option>Saxofón</option>
+        <option>Clarinete</option>
+        <option>Bombo</option>
+        <option>Tambor (Redoble)</option>
+        <option>Platillo</option>
+        <option>Soldado</option>
+        <option>Gallardete</option>
+    </select>
+
+    <label for="celular_estudiante">Número de Celular del Estudiante:</label>
+    <input type="tel" id="celular_estudiante" placeholder="Ej: 76543210" pattern="[0-9]{8}" required>
+
+    <label for="nombre_tutor">Nombre completo del Padre, Madre o Tutor Autorizado:</label>
+    <input type="text" id="nombre_tutor" placeholder="Ej: Jose Luis Escobar Mamani" required>
+
+    <label for="celular_tutor">Número de Celular del Padre, Madre o Tutor:</label>
+    <input type="tel" id="celular_tutor" placeholder="Ej: 76543210" pattern="[0-9]{8}" required>
+
+    <button type="button" class="btn-enviar" onclick="guardarEnviar()">💾 Guardar y Enviar</button>
+
+</div>
+
+<!-- SECCIÓN DE DESCARGA -->
+<div class="form-card hidden" id="descargaSection">
+    <h2>✔ Registro Completado</h2>
+    <p>Tu ficha está lista para descargar.</p>
+
+    <button type="button" class="btn-descargar" onclick="descargarPDF()">⬇ Descargar PDF</button>
+    <button type="button" class="btn-salir" onclick="salir()">🚪 Salir</button>
+
+    <p class="nota">
+        📲 Una vez descargado el PDF, envíalo por WhatsApp 👉  
+        <a href="https://wa.link/05v12w" target="_blank">Click aquí</a>
+    </p>
+</div>
+
+<script src="inscripcion.js"></script>
+
+</body>
+</html>
