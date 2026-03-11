@@ -92,7 +92,7 @@ function descargarPDF() {
 
     doc.setFontSize(17);
     doc.setTextColor(255,255,255);
-    doc.text("FICHA DE REGISTRO BANDA DE MÚSICA", 20, 22);
+    doc.text("COMPROBANTE DE REGISTRO BANDA DE MÚSICA", 20, 22);
 
     doc.setFontSize(13);
     doc.text("U.E.THP JUPAPINA", 20, 32);
@@ -111,6 +111,25 @@ function descargarPDF() {
     doc.text("Celular Tutor:", 20, y+100);           doc.text(datosFormulario.celularTutor, 85, y+100);
     doc.text("Fecha de Inscripción:", 20, y+120);    doc.text(datosFormulario.fechaInscripcion, 85, y+120);
 
+        /* ------------------------------
+       FIRMA DEL RESPONSABLE
+    ------------------------------ */
+    doc.setFontSize(12);
+    doc.setTextColor(0,0,0);
+
+    // Línea de firma
+    doc.line(60, y+155, 140, y+155);
+    doc.text("Firma del Padre/Madre o Tutor", 75, y+162);
+
+    /* ------------------------------
+       NOTA INFORMATIVA
+    ------------------------------ */
+    doc.setFontSize(10);
+    doc.text("Nota:", 20, y+180);
+    doc.text("Pase a firmar a la Unidad Educativa Jupapina en el Aula de Música.", 20, y+188);
+    doc.text("Para ello contáctese al número celular 73747321.", 20, y+195);
+    doc.text("El profesor de Música se encuentra en la U.E. los días lunes, martes y miércoles.", 20, y+202);
+
     // Pie de página
     doc.setFillColor(110,60,220);
     doc.rect(10, 260, 190, 20, "F");
@@ -119,7 +138,7 @@ function descargarPDF() {
     doc.text("Gracias por su registro", 70, 273);
 
     // Guardar PDF
-    doc.save("Ficha_Estudiantil.pdf");
+    doc.save("Comprobante_Estudiantil.pdf");
 }
 
 /* ------------------------------
