@@ -52,26 +52,24 @@ function guardarEnviar() {
    ENVIAR DATOS A GOOGLE SHEET (SheetBest)
 ------------------------------ */
 function enviarAGoogleSheet() {
+
     const datos = {
-        "Nombre": datosFormulario.nombre,
-        "Curso": datosFormulario.curso,
-        "Instrumento": datosFormulario.instrumento,
-        "Celular Estudiante": datosFormulario.celularEstudiante,
-        "NombreTutor": datosFormulario.nombreTutor,
-        "CelularTutor": datosFormulario.celularTutor,
-        "Fecha Inscripción": datosFormulario.fechaInscripcion
+    Nombre: datosFormulario.nombre,
+    Curso: datosFormulario.curso,
+    Instrumento: datosFormulario.instrumento,
+    CelularEstudiante: datosFormulario.celularEstudiante,
+    NombreTutor: datosFormulario.nombreTutor,
+    CelularTutor: datosFormulario.celularTutor,
+    FechaInscripcion: datosFormulario.fechaInscripcion
     };
 
-    const url = "https://api.sheetbest.com/sheets/5283c1b7-bbc4-4aa9-8bc4-1d94fc5c3e79";
-
-    fetch(url, {
+    fetch("https://script.google.com/macros/s/AKfycbz3V4ASBKyFREnw9Opm6kcKKM-4SmJGEYbrH6JL6XIrWQhqtvAWJZ9PHSYsTd4oObHHNQ/exec", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(datos)
     })
-    .then(response => response.json())
-    .then(data => console.log("✅ Datos enviados a Google Sheets:", data))
-    .catch(error => console.error("❌ Error al enviar datos a Google Sheets:", error));
+    .then(r => r.text())
+    .then(r => console.log("Respuesta:", r))
+    .catch(err => console.error(err));
 }
 
 /* ------------------------------
